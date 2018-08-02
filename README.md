@@ -25,19 +25,19 @@ This repository is needed to build the docker images for
 az login
 
 # create docker registry
-./az-group-create.sh kubernetes
-./az-acr-create.sh kubernetes registryKubernetes
+./az-group-create.sh <resource_group_name>
+./az-acr-create.sh <resource_group_name> <registry_name>
 
 # load images into registry (must already be loaded into local docker)
-./az-acr-load-images.sh kubernetes registryKubernetes
+./az-acr-load-images.sh <resource_group_name> <registry_name>
 
 # create k8s cluster
-./az-aks-create.sh kubernetes kubernetes
-./az-aks-add-acr.sh kubernetes registryKubernetes registry-kubernetes
+./az-aks-create.sh <resource_group_name> <cluster_name>
+./az-aks-add-acr.sh <resource_group_name> <registry_name> <registry_secret_name>
 
 # deploy helm chart for rti shapes demo
-./helm-install-rti-shapes-demo.sh kubernetes kubernetes registry-kubernetes
+./helm-install-rti-shapes-demo.sh <resource_group_name> <cluster_name> <registry_secret_name>
 
 # start rti shapes demo
-./rtishapesdemo-start.sh kubernetes kubernetes
+./rtishapesdemo-start.sh <resource_group_name> <cluster_name>
 ```
