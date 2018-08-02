@@ -1,0 +1,10 @@
+<dds>
+  <rti_shapes_demo>
+    <domainId>1</domainId>
+    <welcomeScreen>false</welcomeScreen>
+    <popupConfig>false</popupConfig>
+    <qos>
+      <file load="true">AZURE_QOS.xml</file>
+    </qos>
+  </rti_shapes_demo>
+</dds>
