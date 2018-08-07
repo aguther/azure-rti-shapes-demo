@@ -36,7 +36,7 @@ az login
 ./az-aks-add-acr.sh <resource_group_name> <registry_name> <registry_secret_name>
 
 # deploy helm chart for rti shapes demo
-./helm-install-rti-shapes-demo.sh <resource_group_name> <cluster_name> <registry_secret_name>
+./helm-install-rti-shapes-demo.sh <resource_group_name> <cluster_name> <registry_name>
 
 # start rti shapes demo
 ./rtishapesdemo-start.sh <resource_group_name> <cluster_name>
